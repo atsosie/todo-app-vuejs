@@ -36,7 +36,11 @@
       v-show="!isEditing &&todo.done"
       disabled
     >Completed</div>
-    <div class="ui bottom attached red basic button" v-show="!isEditing && !todo.done">Pending</div>
+    <div
+      class="ui bottom attached red basic button"
+      v-on:click="completeTodo(todo)"
+      v-show="!isEditing && !todo.done"
+    >Pending</div>
   </div>
 </template>
 
@@ -57,6 +61,9 @@ export default {
     },
     deleteTodo(todo) {
       this.$emit("delete-todo", todo);
+    },
+    completeTodo(todo) {
+      this.$emit("complete-todo", todo);
     }
   }
 };
