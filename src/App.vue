@@ -1,6 +1,6 @@
 <template>
   <div>
-    <todo-list></todo-list>
+    <todo-list v-bind:todos="todos"></todo-list>
   </div>
 </template>
 
@@ -8,9 +8,37 @@
 import TodoList from "./components/TodoList";
 
 export default {
+  name: "app",
   components: {
     // Add a reference to the TodoList component in the components property
     TodoList
+  },
+
+  data() {
+    return {
+      todos: [
+        {
+          title: "Todo A",
+          project: "Project A",
+          done: false
+        },
+        {
+          title: "Todo B",
+          project: "Project B",
+          done: true
+        },
+        {
+          title: "Todo C",
+          project: "Project C",
+          done: false
+        },
+        {
+          title: "Todo D",
+          project: "Project D",
+          done: false
+        }
+      ]
+    };
   }
 };
 </script>
