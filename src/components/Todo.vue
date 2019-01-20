@@ -5,8 +5,13 @@
       <div class="header">{{ todo.title }}</div>
       <div class="meta">{{ todo.project }}</div>
       <div class="extra content">
+        <!-- show edit icon -->
         <span class="right floated edit icon" v-on:click="showForm">
           <i class="edit icon"></i>
+        </span>
+        <!-- show trash icon below the edit icon -->
+        <span class="right floated trash icon" v-on:click="deleteTodo(todo)">
+          <i class="trash icon"></i>
         </span>
       </div>
     </div>
@@ -49,6 +54,9 @@ export default {
     },
     hideForm() {
       this.isEditing = false;
+    },
+    deleteTodo(todo) {
+      this.$emit("delete-todo", todo);
     }
   }
 };
