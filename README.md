@@ -1,10 +1,10 @@
 # todo-app
 
-> A Vue.js project
+> This is my first Vue.js project. I built this simple app while following a tutorial. I may play with this more and add enhancements, but it's only purpose is to help me get familiar with Vue.js.
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
